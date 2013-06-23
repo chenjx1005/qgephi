@@ -7,6 +7,11 @@
 #include <QtCore\qvariant.h>
 #include <QtCore\QSet>
 #include <QtGui\QPainterPath>
+#include <QPen>
+#include <QtWidgets\QStyleOptionGraphicsItem>
+#include <QtGui\QPainter>
+#include "link.h"
+
 class Link;
 
 class Node : public QGraphicsItem
@@ -26,10 +31,10 @@ public:
 	void removeLink(Link *link);
 
 	QRectF boundingRect() const;
-	QPainterPath shape() const;
+	//QPainterPath shape() const;
 	void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 protected:
-	QVariant itemChange(GraphicsItemChange change, cosnt QVariant &value);
+	QVariant itemChange(GraphicsItemChange change, const QVariant &value);
 private:
 	QRectF outlineRect() const;
 	QSet<Link *> myLinks;

@@ -12,6 +12,7 @@ Link::Link(Node *fromNode, Node *toNode)
 	setZValue(-1);
 
 	setColor(Qt::darkRed);
+	trackNodes();
 }
 
 Link::~Link()
@@ -32,7 +33,7 @@ QColor Link::color() const
 
 void Link::trackNodes()
 {
-	
+	setLine(QLineF(myFromNode->pos(),myToNode->pos()));
 }
 
 

@@ -5,6 +5,8 @@
 #include <QPen>
 #include "node.h"
 
+class Node;
+
 class Link : public QGraphicsLineItem
 {
 public:
